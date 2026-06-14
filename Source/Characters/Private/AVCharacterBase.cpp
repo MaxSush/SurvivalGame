@@ -1,12 +1,14 @@
 
 #include "AVCharacterBase.h"
 #include "GameFramework/CharacterMovementComponent.h"
-
+#include "AVInventoryComponent.h"
 
 
 AAVCharacterBase::AAVCharacterBase()
 {
 	PrimaryActorTick.bCanEverTick = true;
+
+	InventoryComponent = CreateDefaultSubobject<UAVInventoryComponent>(TEXT("InventoryComponent"));
 
 }
 
@@ -87,6 +89,11 @@ void AAVCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+UActorComponent* AAVCharacterBase::GetInventoryComponent() const
+{
+	return Cast<UActorComponent>(InventoryComponent);
 }
 
 

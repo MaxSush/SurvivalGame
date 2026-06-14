@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "AVCharacterBase.generated.h"
 
+class UAVInventoryComponent;
+
 UCLASS(Abstract, NotBlueprintable)
 class CHARACTERS_API AAVCharacterBase : public ACharacter
 {
@@ -15,6 +17,9 @@ public:
 	AAVCharacterBase();
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	UFUNCTION(BlueprintCallable, Category = "Inventory")
+	UActorComponent* GetInventoryComponent() const;
 
 protected:
 	virtual void BeginPlay() override;
@@ -45,4 +50,7 @@ private:
 	float SprintSpeed = 600.f;
 
 #pragma endregion
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Inventory", meta = (AllowPrivateAccess = "true"))
+	UAVInventoryComponent* InventoryComponent;
 };

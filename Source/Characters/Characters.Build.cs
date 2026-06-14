@@ -8,7 +8,9 @@ public class Characters: ModuleRules
             "Core", 
             "CoreUObject", 
             "Engine",
-            "EnhancedInput"
+            "EnhancedInput",
+            "CoreData",
+            "Inventory"
         });
     }
 }
