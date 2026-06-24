@@ -33,6 +33,16 @@
       "Name": "ComponentInterfaces",
       "Type": "Runtime",
       "LoadingPhase": "Default"
+    },
+    {
+      "Name": "Environment",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "Environment",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
     }
   ],
   "Plugins": [
